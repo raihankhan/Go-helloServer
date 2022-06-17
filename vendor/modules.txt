@@ -1,0 +1,3 @@
+# github.com/go-chi/chi/v5 v5.0.8-0.20220520185627-b75b525e1d50
+## explicit; go 1.14
+github.com/go-chi/chi/v5

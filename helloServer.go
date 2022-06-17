@@ -21,7 +21,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	log.Printf("Received request for %s\n", name)
 	_, err := w.Write([]byte(fmt.Sprintf("Hello, %s\n", name)))
 	if err != nil {
-		return 
+		return
 	}
 }
 
@@ -37,18 +37,6 @@ func main() {
 		ReadTimeout:  10 * time.Second,
 		WriteTimeout: 10 * time.Second,
 	}
-
-	// Configure Logging
-	//LOG_FILE_LOCATION := os.Getenv("LOG_FILE_LOCATION")
-	//if LOG_FILE_LOCATION != "" {
-	//	log.SetOutput(&lumberjack.Logger{
-	//		Filename:   LOG_FILE_LOCATION,
-	//		MaxSize:    500, // megabytes
-	//		MaxBackups: 3,
-	//		MaxAge:     28,   //days
-	//		Compress:   true, // disabled by default
-	//	})
-	//}
 
 	// Start Server
 	go func() {
@@ -74,7 +62,7 @@ func waitForShutdown(srv *http.Server) {
 	defer cancel()
 	err := srv.Shutdown(ctx)
 	if err != nil {
-		return 
+		return
 	}
 
 	log.Println("Shutting down")
